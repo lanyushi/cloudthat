@@ -1,0 +1,6 @@
+Task 5
+
+scp –i server-key.pem server-key.pem ec2-user@52.74.108.178:/home/ec2-user
+
+chmod 500 <keyname.pem>
+ssh -i server-key.pem ec2-user@<private IP>
