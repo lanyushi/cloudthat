@@ -1,0 +1,33 @@
+Commands:
+Task 4 - Step 1
+sudo su
+setenforce 0
+
+Task 4 - Step 2
+cd /var/www/html/orangehrm/symfony/config
+cp databases.yml databases.yml.bak
+
+cat databases.yml
+
+cd
+mysqldump -u root -p orangehrm_mysql > orangeHRM.sql
+
+
+cd
+mysql --user=root --password=RDS-db-password --database=CloudThatOrangeHRM --host=endpointForRDS < orangeHRM.sql
+#the above command is the syntax, don't forget to replace the value with your own
+
+mysql --user=root --password=cloudthat --database=CloudThatOrangeHRM --host=aws-orangehrm-db.yudeu-ap-southeast1.rds.amazon.com < orangeHRM.sql
+
+
+
+Task 5 - Step 2
+sudo yum install nano -y
+cd /var/www/html/orangehrm/symfony/config
+sudo nano databases.yml
+
+
+cd /var/www/html/orangehrm/symfony
+php symfony cc
+
+
