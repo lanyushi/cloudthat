@@ -1,0 +1,16 @@
+Links:
+Puttygen - https://the.earth.li/~sgtatham/putty/latest/x86/puttygen.exe
+Putty (windows) - https://the.earth.li/~sgtatham/putty/latest/x86/putty-0.67-installer.msi
+
+Commands:
+Task 4 - Step 9
+sudo mkfs -t ext4 /dev/xvdf
+sudo mkdir /mnt/ebs
+sudo mount /dev/xvdf /mnt/ebs
+
+Task 5 - Step 2
+sudo yum update
+sudo yum install wget
+sudo wget http://files.cloudthat.com/aws/cloudthat-orangehrm-installation.sh
+sudo sh cloudthat-orangehrm-installation.sh
+
