@@ -1,0 +1,8 @@
+Task 3
+cd /var/www/html
+sudo nano index.html
+
+#the below line is not a command, needs to be added to the index.html file above
+<h1>Welcome to cloudthat load balancing</h1>
+
+
