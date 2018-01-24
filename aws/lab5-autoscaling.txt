@@ -1,0 +1,26 @@
+Windows: Download AWSCLI from http://aws.amazon.com/cli/
+Linux:
+Debian / UBuntu - 
+sudo apt-get install python-pip
+sudo pip install awscli
+
+RedHat / CentOS - 
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel- release-latest-7.noarch.rpm
+sudo yum repolist
+sudo yum -y install python-pip
+
+
+aws configure
+aws ec2 describe-images -–owner self
+aws autoscaling create-launch-configuration --launch-configuration-name <Value> --image-id <value> --instance-type <value> --key-name <value> --security-groups <value>
+aws autoscaling create-launch-configuration –-launch-configuration-name OrangeHRMcfg --image-id ami-45abe517 --instance-type t2.micro -–key-name app-server-key –-security-groups sg-0936d466
+
+aws autoscaling describe-launch-configurations
+aws autoscaling create-auto-scaling-group --auto-scaling-group-name <value> --launch-configuration-name <value> --min-size <value> --max-size <value> --load-balancer-name <value> --vpc-zone-identifier <values>
+aws autoscaling create-auto-scaling-group –-auto-scaling-group-name OrangeHRM-group --launch-configuration-name OrangeHRMcfg --min-size 2 --max-size 3 --load-balancer-name orangehrm-lb --vpc-zone-identifier subnet-c374536,subnet-05cb9a72
+aws autoscaling describe-auto-scaling-groups
+
+aws autoscaling update-auto-scaling-group --auto-scaling-group-name OrangeHRM-group --min-size 0
+aws autoscaling update-auto-scaling-group --auto-scaling-group-name OrangeHRM-group --desired-capacity 0
+aws autoscaling delete-auto-scaling-group --auto-scaling-group-name OrangeHRM-group
+
